@@ -5,7 +5,7 @@ function App() {
       <header className="header">
         <img src="/header.jpg" className="headerBackground"/>
         <nav className="headerNav">
-          <h3 className="headerNavLogo">RIVAS<span>TRAVEL</span></h3>
+          <h3 className="headerNavLogo">EASY<span>TRAVEL</span></h3>
           <div className="headerNavButtons">
             <button><img src='/icons/calendar.png'/></button>
             <button><img src='/icons/globe.png'/></button>
@@ -26,28 +26,28 @@ function App() {
         <div className="headerInfo">
           <p className="headerInfoText">
             <span className="headerInfoTextBold">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur sapiente, dolorem a aspernatur voluptatum consectetur minima deleniti!
+              Celebra la cultura brasileña en el lugar donde nació la samba y disfruta de las asombrosas maravillas naturales que la ciudad tiene para ofrecer.
             </span>
             <span>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis totam nisi necessitatibus aspernatur magnam, quisquam maxime ab cum magni voluptate quis soluta qui facilis vel nulla accusantium illo quaerat tenetur?
+              Hay mucho que ver en Río, antes, durante y después del Carnaval, desde el Pan de Azúcar a la estatua del Cristo Redentor del Corcovado y las famosas playas de Copacabana e Ipanema. Muchos tour operadores ofrecen una gran variedad de visitas en Río, la posibilidad de descubrir la ciudad en helicóptero, o sus aguas tibias y atractivas en barco. 
             </span>
           </p>
           <ol className="headerInfoList">
             <li className="headerInfoListItem">
               <img className="headerInfoListItemImage" src='/icons/plane.png'/>
-              <small className="headerInfoListItemText">Sin escalas</small>
+              <p className="headerInfoListItemText">Sin escalas</p>
             </li>
             <li className="headerInfoListItem">
               <img className="headerInfoListItemImage" src='/icons/taxi.png'/>
-              <small className="headerInfoListItemText">Transporte</small>
+              <p className="headerInfoListItemText">Transporte</p>
             </li>
             <li className="headerInfoListItem">
               <img className="headerInfoListItemImage" src='/icons/suitcase.png'/>
-              <small className="headerInfoListItemText">23 KGs</small>
+              <p className="headerInfoListItemText">23 KGs</p>
             </li>
             <li className="headerInfoListItem">
               <img className="headerInfoListItemImage" src='/icons/hotel.png'/>
-              <small className="headerInfoListItemText">Hospedaje</small>
+              <p className="headerInfoListItemText">Hospedaje</p>
             </li>
           </ol>
           <footer className="headerInfoFooter">
@@ -60,6 +60,30 @@ function App() {
           </footer>
         </div>
       </header>
+      <main className="main">
+        <img className="mainCircleImage" src='/mainBeach.jpg'/>
+        <img className="mainCristoImage" src="/CristoRedentor.png"/>
+        <article className="mainBox">
+          <header className="mainBoxHeader">
+            <img className="mainBoxHeaderIcon" src="/icons/cristoRedentor.png"/>
+            <h2 className="mainBoxHeaderTitle">Rio de Janeiro</h2>
+            <h4 className="mainBoxHeaderSubtitle">5 dias / 4 noches</h4>
+          </header>
+          <footer className="mainBoxFooter">
+            <p className="mainBoxFooterBody">
+              <span>Entre el mar y los morros, Rio de Janeiro es un destino de tarjeta postal para turistas de todas partes del mundo.</span>
+            </p>
+            <p className="mainBoxFooterBody">Relajate en sus largas playas de arena blanca y aguas transparentes. Disfruta las vistas desde el Corcovado y el Pan de Azúcar, además de conectarte con la cultura local en barrios como Urca y Santa Teresa. Y si te gusta el fútbol, ¡no podés perderte una visita al Maracanã!</p>
+            <p className="mainBoxFooterBody">¿Qué te parece andar en bicicleta sintiendo la brisa del mar en la cara? Las principales ciclovías van desde desde Marina da Glória y Centro hasta la zona Sul. 
+            También podés optar por el subte, contás con estaciones en Zona Sul, Centro e una en Barra.</p>
+          </footer>
+          <button className="mainBoxButton">
+            Reservar
+          </button>
+        </article>
+        <div className="mainAside"/>
+        <h1 className="mainLetter">B</h1>
+      </main>
     </>
   )
 }
