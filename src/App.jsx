@@ -1,5 +1,28 @@
 function App() {
 
+  const places = [
+    {
+      name: "San Martin de los Andes",
+      price: 450,
+      image: "/sanMartinDeLosAndes.jpg"
+    },
+    {
+      name: "Isla Margarita",
+      price: 500,
+      image: "/islaMargarita.jpg"
+    },
+    {
+      name: "Cataratas del Iguazu",
+      price: 400,
+      image: "/cataratasDelIguazu.jpg"
+    },
+    {
+      name: "Machu Pichu",
+      price: 400,
+      image: "/machuPichu.jpg"
+    }
+  ]
+
   return (
     <>
       <header className="header">
@@ -84,6 +107,30 @@ function App() {
         <div className="mainAside"/>
         <h1 className="mainLetter">B</h1>
       </main>
+      <section className="interest">
+        <h3 className="interestTitle">Tambien puede interesarte</h3>
+        <div className="interestCarousel">
+          {
+            places.map( (el) => {
+              return <div className="interestCarouselItem" key={el.name}>
+                <header className="interestCarouselItemHeader" style={{ backgroundImage: `url(${el.image})`
+                }}>
+                  <span className="interestCarouselItemHeaderTag">
+                    <h3>${el.price}</h3>
+                    <small>USD</small>
+                  </span>
+                </header>
+                <footer className="interestCarouselItemFooter">
+                  <h4 className="interestCarouselItemFooterTitle">{el.name}</h4>
+                </footer>
+              </div>
+            })
+          }
+        </div>
+        <footer lassName="interestFooter">
+          <h6>Ver mas</h6>
+        </footer>
+      </section>
     </>
   )
 }
