@@ -127,10 +127,16 @@ function App() {
             })
           }
         </div>
-        <footer lassName="interestFooter">
-          <h6>Ver mas</h6>
+        <footer className="interestFooter">
+          <h4>Ver mas</h4>
         </footer>
       </section>
+      <footer className="footer">
+        <h3 className="footerLogo">EASY<span>TRAVEL</span></h3>
+        <button className="footerButton">
+          <img src='/icons/mail.png'/>
+        </button>
+      </footer>
     </>
   )
 }
