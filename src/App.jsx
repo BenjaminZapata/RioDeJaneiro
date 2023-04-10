@@ -26,7 +26,6 @@ function App() {
   return (
     <>
       <header className="header">
-        <img src="/header.jpg" className="headerBackground"/>
         <nav className="headerNav">
           <h3 className="headerNavLogo">EASY<span>TRAVEL</span></h3>
           <div className="headerNavButtons">
@@ -41,6 +40,7 @@ function App() {
             <h4 className="headerNavLogInText">Ingresar</h4>
           </div>
         </nav>
+        <img src="/header.jpg" className="headerBackground"/>
         <div className="headerTitle">
           <div></div>
           <h2>RIO DE JANEIRO</h2>
@@ -74,9 +74,11 @@ function App() {
             </li>
           </ol>
           <footer className="headerInfoFooter">
-            <h5>PROMO DESDE</h5>
-            <h1>$450</h1>
-            <h4>USD</h4>
+            <div className="headerInfoFooterText">
+              <h5>PROMO DESDE</h5>
+              <h1>$450</h1>
+              <h4>USD</h4>
+            </div>
             <button className="headerInfoFooterButton">
               Reservar
             </button>
@@ -84,8 +86,10 @@ function App() {
         </div>
       </header>
       <main className="main">
-        <img className="mainCircleImage" src='/mainBeach.jpg'/>
-        <img className="mainCristoImage" src="/CristoRedentor.png"/>
+        <picture>
+          <img className="mainCircleImage" src='/mainBeach.jpg'/>
+          <img className="mainCristoImage" src="/CristoRedentor.png"/>
+        </picture>
         <article className="mainBox">
           <header className="mainBoxHeader">
             <img className="mainBoxHeaderIcon" src="/icons/cristoRedentor.png"/>

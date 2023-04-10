@@ -26,504 +26,950 @@
   --white: #FEFEFE;
 }
 
-#root {
-  max-width: 100vw;
-  .header{
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    z-index: 0;
-    &Background{
-      z-index: -1;
-      position: absolute;
-      object-fit: cover;
+@media (min-width: 801px){
+  #root {
+    max-width: 100vw;
+    .header{
       min-height: 100vh;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-    }
-    &Nav{
-      display: flex;
-      justify-content: space-between;
-      padding: 0 clamp(2rem, 2vw, 5em);
-      &Logo{
-        cursor: pointer;
-        margin-top: .5em;
-        font-size: 2rem;
-        line-height: 3rem;
-        color: var(--gold);
-        transition: all .3s ease;
-        span{
-          font-weight: 300;
-        }
-        &:hover{
-          transform: translateY(-5px);
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      z-index: 0;
+      &Background{
+        z-index: -1;
+        position: absolute;
+        object-fit: cover;
+        min-height: 100vh;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+      &Nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 clamp(2rem, 2vw, 5em);
+        &Logo{
+          cursor: pointer;
+          margin-top: .5em;
+          font-size: 2rem;
+          line-height: 3rem;
+          color: var(--gold);
+          transition: all .3s ease;
           span{
-            font-weight: 600;
+            font-weight: 300;
+          }
+          &:hover{
+            transform: translateY(-5px);
+            span{
+              font-weight: 600;
+            }
           }
         }
-      }
-      &Buttons{
-        display: flex;
-        gap: 1em;
-        button{
-          cursor: pointer;
-          border: none;
-          background: none;
-          transition: .2s all ease;
-          -moz-user-select: none;
-          -khtml-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-          img{
-            width: 25px;
-            height: 25px;
-            filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+        &Buttons{
+          display: flex;
+          gap: 1em;
+          button{
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: .2s all ease;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            img{
+              width: 25px;
+              height: 25px;
+              filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+            }
+          }
+          button:nth-child(2){
+            img{
+              width: 40px;
+              height: 40px;
+            }
+          }
+          button:hover{
+            transform: translateY(-5px);
           }
         }
-        button:nth-child(2){
-          img{
-            width: 40px;
-            height: 40px;
-          }
-        }
-        button:hover{
-          transform: translateY(-5px);
-        }
-      }
-      &LogIn{
-        position: relative;
-        width: 280px;
-        max-width: 280px;
-        display: flex;
-        align-items: center;
-        gap: 1em;
-        background-color: var(--gold);
-        padding: 1em 1em 1em 0;
-        &Icon{
+        &LogIn{
           position: relative;
-          left: -25px;
-          background-color: var(--blue);
-          border-radius: 50%;
-          height: 50px;
-          width: 50px;
-          &Image{
-            filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
-          }
-        }
-        &Text{
-          position: relative;
-          left: -20px;
-          color: var(--blue);
-          cursor: pointer;
-        }
-        &Text::after{
-          position: absolute;
-          content: '';
-          width: 0%;
-          height: 2px;
-          bottom: -6px;
-          left: 1px;
-          right: 0;
-          background-color: var(--blue);
-          transform-origin: left;
-          transition: .3s all ease;
-        }
-        &Text:hover::after{
-          width: 100%;
-        }
-      }
-    }
-    &Title{
-      display: flex;
-      flex-direction: column;
-      gap: .5em;
-      max-width: fit-content;
-      margin: 8vh 0 0 clamp(0em, 5vw, 10em);
-      div{
-        width: clamp(100px, 15vw, 200px);
-        height: clamp(7.5px, 5vw, 13px);
-        background-color: var(--white);
-        border-top-right-radius: 100%;
-      }
-      h2{
-        color: var(--white);
-        font-size: clamp(1.75em, 5vw, 3.75em);
-      }
-      h3{
-        color: var(--white);
-        font-size: clamp(1em, 3vw, 2.25em);;
-      }
-    }
-    &Info{
-      z-index: -1;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 280px;
-      max-width: 280px;
-      padding: 90px .5em 40px .5em;
-      height: 100vh;
-      top: 0;
-      bottom: 0;
-      right: clamp(2rem, 2vw, 5em);
-      background-color: var(--gold);
-      &Text {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        padding: 0 1em;
-        font-size: .9rem;
-        color: var(--blue);
-        span{
-          letter-spacing: .03em;
-          font-weight: 400;
-          display: block;
-        }
-        &Bold{
-          font-weight: 900 !important;
-        }
-      }
-      &List{
-        padding: 0 .5em;
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em 0em;
-        &Item{
+          width: 280px;
+          max-width: 280px;
           display: flex;
           align-items: center;
-          padding-left: 50px;
           gap: 1em;
-          width: 100%;
-          &Image{
-            width: 35px;
-            height: 35px;
-            filter: invert(10%) sepia(12%) saturate(2433%) hue-rotate(153deg) brightness(91%) contrast(92%);
+          background-color: var(--gold);
+          padding: 1em 1em 1em 0;
+          &Icon{
+            position: relative;
+            left: -25px;
+            background-color: var(--blue);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            &Image{
+              filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+            }
           }
           &Text{
-            font-weight: 700;
-            letter-spacing: .03em;
+            position: relative;
+            left: -20px;
             color: var(--blue);
+            cursor: pointer;
+          }
+          &Text::after{
+            position: absolute;
+            content: '';
+            width: 0%;
+            height: 2px;
+            bottom: -6px;
+            left: 1px;
+            right: 0;
+            background-color: var(--blue);
+            transform-origin: left;
+            transition: .3s all ease;
+          }
+          &Text:hover::after{
+            width: 100%;
           }
         }
       }
-      &Footer{
+      &Title{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 1em;
-        h5{
-          font-size: 1rem;
-          font-weight: 800;
-          color: var(--blue);
+        gap: .5em;
+        max-width: fit-content;
+        margin: 8vh 0 0 clamp(0em, 5vw, 10em);
+        div{
+          width: clamp(100px, 15vw, 200px);
+          height: clamp(7.5px, 5vw, 13px);
+          background-color: var(--white);
+          border-top-right-radius: 100%;
         }
-        h1{
-          font-size: 3rem;
-          font-weight: 800;
-          color: var(--blue);
-        }
-        h4{
-          width: 7rem;
-          text-align: end;
-          font-size: 2rem;
-          font-weight: 800;
-          color: var(--blue);
-        }
-        &Button{
-          cursor: pointer;
-          z-index: 10;
-          width: fit-content;
-          background-color: var(--blue);
+        h2{
           color: var(--white);
-          font-weight: 600;
-          font-size: 1rem;
-          padding: .75em 2.75em;
-          letter-spacing: .05rem;
-          border: none;
-          margin-top: 2em;
-          border-radius: 30px;
-          -moz-user-select: none;
-          -khtml-user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-          transition: .2s all ease;
+          font-size: clamp(1.75em, 5vw, 3.75em);
         }
-        &Button:hover{
-          transform: translateY(-5px);
+        h3{
+          color: var(--white);
+          font-size: clamp(1em, 3vw, 2.25em);;
         }
       }
-    }
-  }
-
-  .main{
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: var(--blue);
-    .mainCircleImage{
-      z-index: 2;
-      position: absolute;
-      top: -400px;
-      right: calc(clamp(2rem, 2vw, 5em) + -520px);
-      width: 800px;
-      height: 800px;
-      object-fit:fill;
-      object-position: 0%;
-      clip-path: circle(50.0% at 50% 50%);
-      pointer-events: none;
-    }
-    .mainCristoImage{
-      position: absolute;
-      z-index: 5;
-      bottom: 0;
-      right: -12em;
-      aspect-ratio: 1.046 / 1;
-      height: 92vh;
-      width: auto;
-      pointer-events: none;
-    }
-    &Box{
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 5em);
-      justify-content: center;
-      max-width: 55vw;
-      padding-top: 5em;
-      padding-left: 2.5rem;
-      gap: 2em;
-      &Header{
+      &Info{
+        z-index: -1;
+        position: absolute;
         display: flex;
         flex-direction: column;
-        &Icon{
-          width: 50px;
-          height: 50px;
-          filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
-        }
-        &Title{
-          color: var(--gold);
-          font-size: 3rem;
-        }
-        &Subtitle{
-          color: var(--white);
-          font-size: 1.8rem;
-        }
-      }
-      &Footer{
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        &Body{
-          color: var(--white);
-          z-index: 3;
-          font-size: clamp(.8rem, 1.5vw, .9rem);
-        }
-      }
-      &Button{
-        cursor: pointer;
-        width: fit-content;
+        justify-content: space-between;
+        width: 280px;
+        max-width: 280px;
+        padding: 90px .5em 40px .5em;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        right: clamp(2rem, 2vw, 5em);
         background-color: var(--gold);
-        color: var(--blue);
-        font-weight: 600;
-        font-size: 1.25rem;
-        padding: .6em 2em;
-        letter-spacing: .05rem;
-        border: none;
-        border-radius: 30px;
-        transition: .2s all ease;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      &Button:hover{
-        transform: translateY(-5px);
-      }
-    }
-    &Letter{
-      z-index: 0;
-      position: absolute;
-      font-size: 90rem;
-      color: var(--gold);
-      bottom: -70rem;
-      right: -15rem;
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    &Aside{
-      position: absolute;
-      left: 0;
-      top: 11%;
-      height: 80vh;
-      width: 10px;
-      background-color: var(--gold);
-    }
-  }
-
-  .interest{
-    background-color: var(--gray);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.75em;
-    padding: 5vh 3vw;
-    &Title{
-      color: var(--blue);
-    }
-    &Carousel{
-      display: flex;
-      width: 94vw;
-      justify-content: space-evenly;
-      &Item{
-        cursor: pointer;
-        width: 23%;
-        max-width: 350px;
-        box-shadow: 3px 3px 5px var(--black);
-        border-radius: 12px;
-        &Header{
-          border-top-right-radius: 12px;
-          border-top-left-radius: 12px;
-          background-size: cover;
-          background-position: center 20%;
-          width: 100%;
-          height: 10rem;
-          padding: .5em;
-          &Tag{
-            width: fit-content;
+        &Text {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          padding: 0 1em;
+          font-size: .9rem;
+          color: var(--blue);
+          span{
+            letter-spacing: .03em;
+            font-weight: 400;
+            display: block;
+          }
+          &Bold{
+            font-weight: 900 !important;
+          }
+        }
+        &List{
+          padding: 0 .5em;
+          list-style-type: none;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5em 0em;
+          &Item{
             display: flex;
-            flex-direction: column;
-            background-color: var(--gold);
-            padding: .3em .6em .3em .6em;
-            text-align: right;
-            border-radius: 5px;
-            box-shadow: 1px 1px 4px var(--black);
-            h3{
-              font-size: 1.1rem;
-              line-height: 1.1rem;
+            align-items: center;
+            padding-left: 50px;
+            gap: 1em;
+            width: 100%;
+            &Image{
+              width: 35px;
+              height: 35px;
+              filter: invert(10%) sepia(12%) saturate(2433%) hue-rotate(153deg) brightness(91%) contrast(92%);
             }
-            small{
+            &Text{
               font-weight: 700;
-              font-size: .75rem;
+              letter-spacing: .03em;
+              color: var(--blue);
             }
           }
         }
         &Footer{
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          width: 100%;
-          min-height: 80px;
-          height: fit-content;
-          padding: 1em 1em;
-          background-color: var(--white);
-          border-bottom-right-radius: 12px;
-          border-bottom-left-radius: 12px;
-          &Title{
-            font-size: clamp(.5rem, 5vw, 1rem);
-            color: var(--blue);
+          align-items: center;
+          padding: 1em;
+          &Text{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            h5{
+              font-size: 1rem;
+              font-weight: 800;
+              color: var(--blue);
+            }
+            h1{
+              font-size: 3rem;
+              font-weight: 800;
+              color: var(--blue);
+            }
+            h4{
+              width: 7rem;
+              text-align: end;
+              font-size: 2rem;
+              font-weight: 800;
+              color: var(--blue);
+            }
+          }
+          &Button{
+            cursor: pointer;
+            z-index: 10;
+            width: fit-content;
+            background-color: var(--blue);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: .75em 2.75em;
+            letter-spacing: .05rem;
+            border: none;
+            margin-top: 2em;
+            border-radius: 30px;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: .2s all ease;
+          }
+          &Button:hover{
+            transform: translateY(-5px);
           }
         }
       }
     }
-    &Footer{
-      display: flex;
-      width: 100%;
-      justify-content: flex-end;
-      h4{
-        cursor: pointer;
-        width: fit-content;
-        color: var(--dark-gray);
+  
+    .main{
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background-color: var(--blue);
+      .mainCircleImage{
+        z-index: 2;
+        position: absolute;
+        top: -400px;
+        right: calc(clamp(2rem, 2vw, 5em) + -520px);
+        width: 800px;
+        height: 800px;
+        object-fit:fill;
+        object-position: 0%;
+        clip-path: circle(50.0% at 50% 50%);
+        pointer-events: none;
       }
-    }
-  }
-
-  .footer{
-    background-color: var(--blue);
-    padding: 2vw 5vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    &Logo{
-      font-size: 2rem;
-      line-height: 3rem;
-      color: var(--gold);
-      span{
-        font-weight: 300;
+      .mainCristoImage{
+        max-width: 300vw !important;
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        right: -20em;
+        aspect-ratio: 1.046 / 1;
+        height: 92vh;
+        width: auto;
+        pointer-events: none;
       }
-    }
-    &Button{
-      cursor: pointer;
-      background: none;
-      border: none;
-      filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
-      transition: .2s all ease;
-      img{
-        width: 40px;
-        height: 40px;
-      }
-    }
-    &Button:hover{
-      transform: translateY(-5px);
-    }
-  }
-}
-
-@media (min-width: 800px) and (max-height: 850px){
-  #root{
-    .header{
-      &Info{
-        padding: 80px 0.5em 10px 0.5em;
-        &Text{
-          font-size: .75rem;
+      &Box{
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 5em);
+        justify-content: center;
+        max-width: 55vw;
+        padding-top: 5em;
+        padding-left: 2.5rem;
+        gap: 2em;
+        &Header{
+          display: flex;
+          flex-direction: column;
+          &Icon{
+            width: 50px;
+            height: 50px;
+            filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+          }
+          &Title{
+            color: var(--gold);
+            font-size: 3rem;
+          }
+          &Subtitle{
+            color: var(--white);
+            font-size: 1.8rem;
+          }
         }
-        &List{
-          flex-direction: row;
-          flex-wrap: wrap;
-          padding: 0 .75em;
-          gap: 1em 0;
-          &Item{
-            width: 50%;
-            padding-left: 0;
-            gap: .5em;
-            &Text{
-              font-size: .8rem;
+        &Footer{
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          &Body{
+            color: var(--white);
+            z-index: 3;
+            font-size: clamp(.8rem, 1.5vw, .9rem);
+          }
+        }
+        &Button{
+          cursor: pointer;
+          width: fit-content;
+          background-color: var(--gold);
+          color: var(--blue);
+          font-weight: 600;
+          font-size: 1.25rem;
+          padding: .6em 2em;
+          letter-spacing: .05rem;
+          border: none;
+          border-radius: 30px;
+          transition: .2s all ease;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        &Button:hover{
+          transform: translateY(-5px);
+        }
+      }
+      &Letter{
+        z-index: 0;
+        position: absolute;
+        font-size: 90rem;
+        color: var(--gold);
+        bottom: -70rem;
+        right: -2rem;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      &Aside{
+        position: absolute;
+        left: 0;
+        top: 11%;
+        height: 80vh;
+        width: 10px;
+        background-color: var(--gold);
+      }
+    }
+  
+    .interest{
+      background-color: var(--gray);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.75em;
+      padding: 5vh 3vw;
+      &Title{
+        color: var(--blue);
+      }
+      &Carousel{
+        display: flex;
+        width: 94vw;
+        justify-content: space-evenly;
+        &Item{
+          cursor: pointer;
+          width: 23%;
+          max-width: 350px;
+          box-shadow: 3px 3px 5px var(--black);
+          border-radius: 12px;
+          &Header{
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            background-size: cover;
+            background-position: center 20%;
+            width: 100%;
+            height: 10rem;
+            padding: .5em;
+            &Tag{
+              width: fit-content;
+              display: flex;
+              flex-direction: column;
+              background-color: var(--gold);
+              padding: .3em .6em .3em .6em;
+              text-align: right;
+              border-radius: 5px;
+              box-shadow: 1px 1px 4px var(--black);
+              h3{
+                font-size: 1.1rem;
+                line-height: 1.1rem;
+              }
+              small{
+                font-weight: 700;
+                font-size: .75rem;
+              }
+            }
+          }
+          &Footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 80px;
+            height: fit-content;
+            padding: 1em 1em;
+            background-color: var(--white);
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            &Title{
+              font-size: clamp(.5rem, 5vw, 1rem);
+              color: var(--blue);
             }
           }
         }
       }
-    }
-    .main{
-      .mainCristoImage{
-        right: -10em;
+      &Footer{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        h4{
+          cursor: pointer;
+          width: fit-content;
+          color: var(--dark-gray);
+        }
       }
     }
-  }
-}
-
-@media (max-width: 1050px) and (min-width: 800px){
-  #root{
-    .interest{
-      &Carousel{
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 1.75em 0;
-        &Item{
-          width: 45%;
+  
+    .footer{
+      background-color: var(--blue);
+      padding: 2vw 5vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &Logo{
+        font-size: 2rem;
+        line-height: 3rem;
+        color: var(--gold);
+        span{
+          font-weight: 300;
         }
+      }
+      &Button{
+        cursor: pointer;
+        background: none;
+        border: none;
+        filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+        transition: .2s all ease;
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &Button:hover{
+        transform: translateY(-5px);
       }
     }
   }
 }
 
 @media (max-width: 800px){
+  #root{
+    overflow-x: hidden;
+    .header{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      &Nav{
+        background-color: var(--blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0 0 0;
+        gap: 1em;
+        &Logo{
+          cursor: pointer;
+          font-size: 2rem;
+          line-height: 3rem;
+          color: var(--gold);
+          transition: all .3s ease;
+          span{
+            font-weight: 300;
+          }
+          &:hover{
+            transform: translateY(-5px);
+            span{
+              font-weight: 600;
+            }
+          }
+        }
+        &Buttons{
+          display: flex;
+          gap: 1em;
+          button{
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: .2s all ease;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            img{
+              width: 35px;
+              height: 35px;
+              filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+            }
+          }
+          button:nth-child(2){
+            img{
+              width: 50px;
+              height: 50px;
+            }
+          }
+          button:hover{
+            transform: translateY(-5px);
+          }
+        }
+        &LogIn{
+          &Icon{
+            cursor: pointer;
+            position: relative;
+            background-color: var(--blue);
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            &Image{
+              filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+            }
+          }
+          &Text{
+            display: none;
+          }
+        }
+      }
+      &Background{
+        min-height: 50vh;
+        object-fit: cover;
+      }
+      &Title{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: calc(180px + 8em);
+        left: 4em;
+        gap: .5em;
+        max-width: fit-content;
+        div{
+          width: clamp(100px, 15vw, 200px);
+          height: clamp(7.5px, 5vw, 13px);
+          background-color: var(--white);
+          border-top-right-radius: 100%;
+        }
+        h2{
+          color: var(--white);
+          font-size: clamp(1.75em, 5vw, 3.75em);
+        }
+        h3{
+          color: var(--white);
+          font-size: clamp(1em, 3vw, 2.25em);;
+        }
+      }
+      &Info{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        justify-content: space-between;
+        background-color: var(--gold);
+        padding: 3em 2.5em;
+        &Text {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          font-size: 1.1rem;
+          text-align: justify;
+          color: var(--blue);
+          span{
+            letter-spacing: .03em;
+            font-weight: 400;
+            display: block;
+          }
+          &Bold{
+            font-weight: 900 !important;
+          }
+        }
+        &List{
+          padding: 0 1em 0 2em;
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1.5em 0em;
+          width: 100%;
+          &Item{
+            width: fit-content;
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            &Image{
+              width: clamp(40px, 3vw, 50px);
+              height: clamp(40px, 3vw, 50px);
+              filter: invert(10%) sepia(12%) saturate(2433%) hue-rotate(153deg) brightness(91%) contrast(92%);
+            }
+            &Text{
+              font-size: clamp(.9rem, 3vw, 1.25rem);
+              font-weight: 700;
+              letter-spacing: .03em;
+              color: var(--blue);
+            }
+          }
+        }
+        &Footer{
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          padding: 1em clamp(.2em, 4vw, 2em);
+          &Text{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            h5{
+              font-size: clamp(1rem, 4vw, 2rem);
+              font-weight: 800;
+              color: var(--blue);
+            }
+            h1{
+              font-size: clamp(3.5rem, 4vw, 7rem);
+              font-weight: 800;
+              color: var(--blue);
+            }
+            h4{
+              font-size: clamp(1.5rem, 4vw, 3rem);
+              font-weight: 800;
+              color: var(--blue);
+            }
+          }
+          &Button{
+            cursor: pointer;
+            position: absolute;
+            right: clamp(-1em, 6.5vw, -1.75rem);
+            z-index: 10;
+            width: fit-content;
+            background-color: var(--blue);
+            color: var(--white);
+            font-weight: 600;
+            font-size: clamp(1.5em, 6.5vw, 2rem);
+            padding: .5em 1.75em;
+            letter-spacing: .05rem;
+            border: none;
+            border-radius: 30px;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            transition: .2s all ease;
+          }
+          &Button:hover{
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
 
+    .main{
+      position: relative;
+      min-height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-color: var(--blue);
+      picture{
+        z-index: 1;
+        position: absolute;
+        max-width: 300vw !important;
+        right: -650px;
+        top: -450px;
+        width: 900px;
+        height: 900px;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background-color: red;
+        clip-path: circle(50.0% at 50% 50%);
+        .mainCircleImage{
+          z-index: 2;
+          position: absolute;
+          object-fit: fill;
+          bottom: 0;
+          width: 800px;
+          height: 800px;
+          pointer-events: none;
+        }
+        .mainCristoImage{
+          position: absolute;
+          z-index: 3;
+          aspect-ratio: 1.046 / 1;
+          height: 380px;
+          bottom: 10px;
+          right: 470px;
+          width: auto;
+          pointer-events: none;
+        }
+      }
+      &Box{
+        position: relative;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 5em);
+        justify-content: center;
+        max-width: 80vw;
+        padding-top: 5em;
+        padding-left: 3rem;
+        gap: 2em;
+        &Header{
+          display: flex;
+          flex-direction: column;
+          &Icon{
+            width: 50px;
+            height: 50px;
+            filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+          }
+          &Title{
+            color: var(--gold);
+            font-size: 4rem;
+          }
+          &Subtitle{
+            color: var(--white);
+            font-size: 1.8rem;
+          }
+        }
+        &Footer{
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+          padding-left: 2em;
+          &Body{
+            color: var(--white);
+            z-index: 3;
+            font-size: 1.1rem;
+          }
+        }
+        &Button{
+          cursor: pointer;
+          width: fit-content;
+          background-color: var(--gold);
+          color: var(--blue);
+          font-weight: 600;
+          font-size: 1.25rem;
+          margin-left: 2em;
+          padding: .6em 2em;
+          letter-spacing: .05rem;
+          border: none;
+          border-radius: 30px;
+          transition: .2s all ease;
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        &Button:hover{
+          transform: translateY(-5px);
+        }
+      }
+      &Letter{
+        z-index: 0;
+        position: absolute;
+        font-size: 90rem;
+        color: var(--gold);
+        bottom: -70rem;
+        right: -15rem;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      &Aside{
+        position: absolute;
+        left: 0;
+        top: 11%;
+        height: 80vh;
+        width: 10px;
+        background-color: var(--gold);
+      }
+    }
+
+    .interest{
+      background-color: var(--gray);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.75em;
+      padding: 5vh 3vw;
+      &Title{
+        color: var(--blue);
+      }
+      &Carousel{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em .5em;
+        width: 94vw;
+        justify-content: space-evenly;
+        &Item{
+          cursor: pointer;
+          width: 45%;
+          min-width: 270px;
+          max-width: 350px;
+          box-shadow: 3px 3px 5px var(--black);
+          border-radius: 12px;
+          &Header{
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+            background-size: cover;
+            background-position: center 20%;
+            width: 100%;
+            height: 10rem;
+            padding: .5em;
+            &Tag{
+              width: fit-content;
+              display: flex;
+              flex-direction: column;
+              background-color: var(--gold);
+              padding: .3em .6em .3em .6em;
+              text-align: right;
+              border-radius: 5px;
+              box-shadow: 1px 1px 4px var(--black);
+              h3{
+                font-size: 1.1rem;
+                line-height: 1.1rem;
+              }
+              small{
+                font-weight: 700;
+                font-size: .75rem;
+              }
+            }
+          }
+          &Footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 60px;
+            height: fit-content;
+            padding: 1em 1em;
+            background-color: var(--white);
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            &Title{
+              font-size: clamp(.5rem, 5vw, 1rem);
+              color: var(--blue);
+            }
+          }
+        }
+      }
+      &Footer{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        h4{
+          cursor: pointer;
+          width: fit-content;
+          color: var(--dark-gray);
+        }
+      }
+    }
+
+    .footer{
+      background-color: var(--blue);
+      padding: 4vh 8vw;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &Logo{
+        font-size: 2rem;
+        line-height: 3rem;
+        color: var(--gold);
+        span{
+          font-weight: 300;
+        }
+      }
+      &Button{
+        cursor: pointer;
+        background: none;
+        border: none;
+        filter: invert(91%) sepia(19%) saturate(2688%) hue-rotate(330deg) brightness(87%) contrast(90%);
+        transition: .2s all ease;
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &Button:hover{
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (max-height: 850px){
+    #root{
+      .header{
+        &Info{
+          padding: 80px 0.5em 10px 0.5em;
+          &Text{
+            font-size: .75rem;
+          }
+          &List{
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 .75em;
+            gap: 1em 0;
+            &Item{
+              width: 50%;
+              padding-left: 0;
+              gap: .5em;
+              &Text{
+                font-size: .8rem;
+              }
+            }
+          }
+        }
+      }
+      .main{
+        .mainCristoImage{
+          right: -10em;
+        }
+      }
+    }
+}
+  
+@media (max-width: 1050px) and (min-width: 800px){
+    #root{
+      .interest{
+        &Carousel{
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          gap: 1.75em 0;
+          &Item{
+            width: 45%;
+          }
+        }
+      }
+    }
 }
