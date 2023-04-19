@@ -711,6 +711,7 @@
         background-color: red;
         clip-path: circle(50.0% at 50% 50%);
         .mainCircleImage{
+          object-fit: cover;
           z-index: 2;
           position: absolute;
           object-fit: fill;
@@ -735,11 +736,10 @@
         z-index: 4;
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 5em);
+        min-height: calc(100vh - 5em);
         justify-content: center;
         max-width: 80vw;
-        padding-top: 5em;
-        padding-left: 3rem;
+        padding: 5em 0 5em 3em;
         gap: 2em;
         &Header{
           display: flex;
@@ -972,4 +972,19 @@
         }
       }
     }
+}
+
+@media (max-width: 380px){
+  #root{
+    .header{
+      &Info{
+        padding: 2.5em 1.25em;
+        &Footer{
+          &Button{
+            padding: .5em 1.25em;
+          }
+        }
+      }
+    }
+  }
 }
